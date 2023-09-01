@@ -1,0 +1,18 @@
+print (" Welcome to Hunny Greeting Services")
+import time
+t2 = time.strftime("%H")
+
+n = input("Your name please!: ")
+h = int(time.strftime("%H"))
+
+if (4<=h<12):
+    print("Good Morning, Sir, n")
+elif (12<=h<17):
+    print("Good Afternoon Sir", n)
+elif (18<=h<22):
+    print("Good Evening Sir", n)
+else:
+    print("Good Night Sir", n)
+
+t1 = time.strftime('%H:%M:%S')
+print ("Time Right Now is:", t1)
