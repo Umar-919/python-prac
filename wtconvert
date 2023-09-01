@@ -1,0 +1,61 @@
+while True:
+    print("Welcome to the Advanced Weight Converter!")
+
+    try:
+        weight = float(input("Enter Weight: "))
+    except ValueError:
+        print("Invalid input for weight. Please enter a numeric value.")
+        continue
+
+    unit = str(input("Define Unit - (K)g, (L)bs, (O)z, (G)m: "))
+    tu = str(input("Select Target Unit - (K)g, (L)bs, (O)z, (G)m: "))
+
+# Conversion functions
+def kg_to_g(weight):
+    return weight * 1000
+
+def kg_to_lbs(weight):
+    return weight * 2.20462
+
+def kg_to_oz(weight):
+    return weight * 35.274
+
+def g_to_kg(weight):
+    return weight / 1000
+
+def g_to_lbs(weight):
+    return weight * 0.00220462
+
+def g_to_oz(weight):
+    return weight * 0.035274
+
+# Conversion logic
+if unit == "k" and tu == "g":
+    converted = kg_to_g(weight)
+    target_unit = "grams"
+elif unit == "k" and tu == "l":
+    converted = kg_to_lbs(weight)
+    target_unit = "pounds"
+elif unit == "k" and tu == "o":
+    converted = kg_to_oz(weight)
+    target_unit = "ounces"
+elif unit == "g" and tu == "k":
+    converted = g_to_kg(weight)
+    target_unit = "kilograms"
+elif unit == "g" and tu == "l":
+    converted = g_to_lbs(weight)
+    target_unit = "pounds"
+elif unit == "g" and tu == "o":
+    converted = g_to_oz(weight)
+    target_unit = "ounces"
+else:
+    print("Unsupported unit combination.")
+    exit()
+
+# Output
+print(f"Converted Weight:\nOriginal: {weight} {unit}\nConverted: {converted:.2f} {target_unit}")
+
+another_conversion = input("Do you want to perform another conversion? (yes/no): ")
+if another_conversion.lower() != "yes":
+    print("Goodbye!")
+    exit()
