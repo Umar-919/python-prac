@@ -1,0 +1,36 @@
+import numpy as np 
+a = np.array([1,2,1,4,2,6,8,3,6,6])
+np.sort(a)
+
+# Initialize variables
+total = 0
+count = 0
+
+# Keep asking for numbers until the user decides to stop
+while True:
+    try:
+        num_input = input("Enter a number or press 'x' to calculate average): ")
+        
+        # Check if the user wants to stop entering numbers
+        if num_input.lower() == 'x':
+            break
+        
+        # Convert the user's input to a floating-point number
+        num = float(num_input)
+        
+        # Add the number to the running total
+        total += num
+        
+        # Increment the count of numbers entered
+        count += 1
+    
+    except ValueError:
+        print("Invalid input. Please enter a valid number or 'done' to calculate average.")
+
+# Calculate and display the average
+if count > 0:
+    average = total / count
+    print(f"The average of {count} numbers is: {average}")
+else:
+    print("No numbers entered.")
+
