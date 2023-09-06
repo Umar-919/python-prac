@@ -1,0 +1,27 @@
+
+
+print("Hello and welcome to Hunny Greeting Services ")
+import time
+t1=time.strftime('%H:%M:%S')
+print(t1)
+t2=time.strftime('%H')
+print("Hours is :",t2)
+t3=time.strftime('%M')
+print("Minutes is :",t3)
+t4=time.strftime('%S')
+print("Second is :",t4)
+# Good Morning Sir #
+n = input("Enter your name sir : ")
+h = int(time.strftime('%H'))
+if (5<=h<12):
+  print("Good Morning",n,"Sir")
+# Good Afternoon Sir #
+elif(12<=h<17):
+  print("Good Afternoon",n,"Sir")
+# Good Evening Sir #
+elif(18<=h<21):
+  print("Good Evening",n,"Sir")
+# Good Night Sir #
+else:
+  print("Good Night",n,"Sir")
+
